@@ -1,45 +1,49 @@
 var simplemaps_usmap_mapdata={
   main_settings: {
-   //General settings
-    width: "responsive", //'700' or 'responsive'
+    //General settings
+		width: "responsive", //or 'responsive'
     background_color: "#FFFFFF",
     background_transparent: "yes",
-    border_color: "#ffffff",
     popups: "detect",
     
-    //State defaults
-    state_description: "State Description",
+		//State defaults
+		state_description: "State description",
     state_color: "#88A4BC",
     state_hover_color: "#3B729F",
-    state_url: "",
+    state_url: "https://simplemaps.com",
     border_size: 1.5,
+    border_color: "#ffffff",
     all_states_inactive: "no",
-    all_states_zoomable: "yes",
+    all_states_zoomable: "no",
     
-    //Location defaults
-    location_description: "Add location markers using latitude and longitude!",
-    location_color: "#2041D4",
+		//Location defaults
+		location_description: "Location description",
+    location_color: "#FF0067",
     location_opacity: 0.8,
     location_hover_opacity: 1,
     location_url: "",
     location_size: 25,
     location_type: "square",
-    location_image_source: "frog.png",
     location_border_color: "#FFFFFF",
     location_border: 2,
     location_hover_border: 2.5,
     all_locations_inactive: "no",
     all_locations_hidden: "no",
     
-    //Label defaults
-    label_color: "#d5ddec",
-    label_hover_color: "#d5ddec",
+		//Label defaults
+		label_color: "#ffffff",
+    label_hover_color: "#ffffff",
     label_size: 22,
     label_font: "Arial",
     hide_labels: "no",
-    hide_eastern_labels: "no",
-    manual_zoom: "no",
+   
+		//Zoom settings
+		manual_zoom: "yes",
     back_image: "no",
+    arrow_box: "no",
+    navigation_size: "40",
+    navigation_color: "#f7f7f7",
+    navigation_border_color: "#636363",
     initial_back: "no",
     initial_zoom: -1,
     initial_zoom_solo: "no",
@@ -49,407 +53,444 @@ var simplemaps_usmap_mapdata={
     zoom_percentage: 0.99,
     zoom_time: 0.5,
     
-    //Popup settings
-    popup_color: "white",
+		//Popup settings
+		popup_color: "white",
     popup_opacity: 0.9,
     popup_shadow: 1,
     popup_corners: 5,
     popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
     popup_nocss: "no",
     
-    //Advanced settings
-    div: "map",
+		//Advanced settings
+		div: "map",
     auto_load: "yes",
+    rotate: "0",
     url_new_tab: "yes",
-    images_directory: "/static/lib/simplemaps/map_images/",
-    fade_time: 0.1,
+    images_directory: "default",
     import_labels: "no",
-    link_text: "View Website",
-    state_image_url: "",
-    state_image_position: "",
-    location_image_url: ""
+    fade_time: 0.1,
+    link_text: "View Website"
   },
   state_specific: {
     HI: {
       name: "Hawaii",
-      color: "#6B8F82",
-      hover_color: "#84A89A",
-      description: "<span style='font-size:30px;'>Eric Guida</span><br/><span style='font-size:18px;'>530.574.0634<br/>eric.guida@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     AK: {
       name: "Alaska",
-      color: "#6B8F82",
-      hover_color: "#84A89A",
-      description: "<span style='font-size:30px;'>Eric Guida</span><br/><span style='font-size:18px;'>530.574.0634<br/>eric.guida@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     FL: {
       name: "Florida",
-      color: "#B08B57",
-      hover_color: "#C9A36E",
-      description: "<span style='font-size:30px;'>Remington Kline</span><br/><span style='font-size:18px;'>561.886.7549<br/>remington.kline@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default",
+      inactive: "no"
     },
     NH: {
       name: "New Hampshire",
-      color: "#8C6A4A",
-      hover_color: "#B58257",
-      description: "<span style='font-size:30px;'>AB Turenne</span><br/><span style='font-size:18px;'>860.933.6305<br/>ab.turenne@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     VT: {
       name: "Vermont",
-      color: "#8C6A4A",
-      hover_color: "#B58257",
-      description: "<span style='font-size:30px;'>AB Turenne</span><br/><span style='font-size:18px;'>860.933.6305<br/>ab.turenne@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     ME: {
       name: "Maine",
-      color: "#8C6A4A",
-      hover_color: "#B58257",
-      description: "<span style='font-size:30px;'>AB Turenne</span><br/><span style='font-size:18px;'>860.933.6305<br/>ab.turenne@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     RI: {
       name: "Rhode Island",
-      color: "#8C6A4A",
-      hover_color: "#B58257",
-      description: "<span style='font-size:30px;'>AB Turenne</span><br/><span style='font-size:18px;'>860.933.6305<br/>ab.turenne@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     NY: {
       name: "New York",
-      color: "#8F7C6B",
-      hover_color: "#A9947F",
-      description: "<span style='font-size:30px;'>Ryan Decker</span><br/><span style='font-size:18px;'>Upstate NY<br/>315.601.5842<br/>ryan.decker@hennozzles.com</span><br/><br/><span style='font-size:18px;'>Long Island NY - TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     PA: {
       name: "Pennsylvania",
-      color: "#7A8570",
-      hover_color: "#949F8A",
-      description: "<span style='font-size:18px;'>East PA - TBD</span><br/><br/><span style='font-size:18px;'>West PA - TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     NJ: {
       name: "New Jersey",
-      color: "#B7A28C",
-      hover_color: "#CFB79F",
-      description: "<span style='font-size:30px;'>TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     DE: {
       name: "Delaware",
-      color: "#B5A36A",
-      hover_color: "#D1BE7F",
-      description: "<span style='font-size:30px;'>Ed Alsip</span><br/><span style='font-size:18px;'>513.417.5475<br/>ed.alsip@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     MD: {
       name: "Maryland",
-      color: "#B5A36A",
-      hover_color: "#D1BE7F",
-      description: "<span style='font-size:30px;'>Ed Alsip</span><br/><span style='font-size:18px;'>513.417.5475<br/>ed.alsip@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     VA: {
       name: "Virginia",
-      color: "#B5A36A",
-      hover_color: "#D1BE7F",
-      description: "<span style='font-size:30px;'>Ed Alsip</span><br/><span style='font-size:18px;'>513.417.5475<br/>ed.alsip@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     WV: {
       name: "West Virginia",
-      color: "#B5A36A",
-      hover_color: "#D1BE7F",
-      description: "<span style='font-size:30px;'>Ed Alsip</span><br/><span style='font-size:18px;'>513.417.5475<br/>ed.alsip@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     OH: {
       name: "Ohio",
-      color: "#9C836C",
-      hover_color: "#B79A82",
-      description: "<span style='font-size:18px;'>TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     IN: {
       name: "Indiana",
-      color: "#7E8F6B",
-      hover_color: "#97A97C",
-      description: "<span style='font-size:30px;'>Colton Crowe</span><br/><span style='font-size:18px;'>217.825.6414<br/>colton.crowe@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     IL: {
       name: "Illinois",
-      color: "#7E8F6B",
-      hover_color: "#97A97C",
-      description: "<span style='font-size:30px;'>Colton Crowe</span><br/><span style='font-size:18px;'>217.825.6414<br/>colton.crowe@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     CT: {
       name: "Connecticut",
-      color: "#8C6A4A",
-      hover_color: "#B58257",
-      description: "<span style='font-size:30px;'>AB Turenne</span><br/><span style='font-size:18px;'>860.933.6305<br/>ab.turenne@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     WI: {
       name: "Wisconsin",
-      color: "#C19A6B",
-      hover_color: "#D9B382",
-      description: "<span style='font-size:30px;'>Collin Hofschulte</span><br/><span style='font-size:18px;'>507.460.9665<br/>collin.hofschulte@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     NC: {
       name: "North Carolina",
-      color: "#9C8F7A",
-      hover_color: "#B3A58F",
-      description: "<span style='font-size:30px;'>Dustin Eassa</span><br/><span style='font-size:18px;'>301.991.7858<br/>dustin.eassa@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     DC: {
       name: "District of Columbia",
-      color: "#B5A36A",
-      hover_color: "#D1BE7F",
-      description: "<span style='font-size:30px;'>Ed Alsip</span><br/><span style='font-size:18px;'>513.417.5475<br/>ed.alsip@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     MA: {
       name: "Massachusetts",
-      color: "#8C6A4A",
-      hover_color: "#B58257",
-      description: "<span style='font-size:30px;'>AB Turenne</span><br/><span style='font-size:18px;'>860.933.6305<br/>ab.turenne@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     TN: {
       name: "Tennessee",
-      color: "#7C8C96",
-      hover_color: "#B79F8D",
-      description: "<span style='font-size:30px;'>TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     AR: {
       name: "Arkansas",
-      color: "#6F7C4B",
-      hover_color: "#8C9A5F",
-      description: "<span style='font-size:30px;'>Rob Tidquist</span><br/><span style='font-size:18px;'>972.999.7901<br/>rob.tidquist@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     MO: {
       name: "Missouri",
-      color: "#9A9C84",
-      hover_color: "#B1B497",
-      description: "<span style='font-size:30px;'>Tim Intessimone</span><br/><span style='font-size:18px;'>417.434.6487<br/>tim.intessimone@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     GA: {
       name: "Georgia",
-      color: "#B08B57",
-      hover_color: "#C9A36E",
-      description: "<span style='font-size:30px;'>Remington Kline</span><br/><span style='font-size:18px;'>561.886.7549<br/>remington.kline@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     SC: {
       name: "South Carolina",
-      color: "#9C8F7A",
-      hover_color: "#B3A58F",
-      description: "<span style='font-size:30px;'>Dustin Eassa</span><br/><span style='font-size:18px;'>301.991.7858<br/>dustin.eassa@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     KY: {
       name: "Kentucky",
-      color: "#9E8B76",
-      hover_color: "#B79F8D",
-      description: "<span style='font-size:30px;'>TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      zoomable: "no",
+      hover_color: "default",
+      url: "default"
     },
     AL: {
       name: "Alabama",
-      color: "#708090",
-      hover_color: "#8A9AA8",
-      description: "<span style='font-size:30px;'>Michael McCollum</span><br/><span style='font-size:18px;'>706.341.9974<br/>michael.mccollum@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     LA: {
       name: "Louisiana",
-      color: "#6F7C4B",
-      hover_color: "#8C9A5F",
-      description: "<span style='font-size:30px;'>Rob Tidquist</span><br/><span style='font-size:18px;'>972.999.7901<br/>rob.tidquist@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     MS: {
       name: "Mississippi",
-      color: "#708090",
-      hover_color: "#8A9AA8",
-      description: "<span style='font-size:30px;'>Michael McCollum</span><br/><span style='font-size:18px;'>706.341.9974<br/>michael.mccollum@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     IA: {
       name: "Iowa",
-      color: "#8B9C7A",
-      hover_color: "#A3B58F",
-      description: "<span style='font-size:30px;'>Matt Woitalewicz</span><br/><span style='font-size:18px;'>308.390.3654<br/>matt.woitalewicz@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     MN: {
       name: "Minnesota",
-      color: "#C19A6B",
-      hover_color: "#D9B382",
-      description: "<span style='font-size:30px;'>Collin Hofschulte</span><br/><span style='font-size:18px;'>507.460.9665<br/>collin.hofschulte@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     OK: {
       name: "Oklahoma",
-      color: "#6F7C4B",
-      hover_color: "#8C9A5F",
-      description: "<span style='font-size:30px;'>Rob Tidquist</span><br/><span style='font-size:18px;'>972.999.7901<br/>rob.tidquist@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     TX: {
       name: "Texas",
-      color: "#7C8C96",
-      hover_color: "#96A3AD",
-      description: "<span style='font-size:30px;'>Rob Tidquist</span><br/><span style='font-size:18px;'>972.999.7901<br/>rob.tidquist@hennozzles.com</span><br/><br/><span style='font-size:30px;'>Toby Boone</span><br/><span style='font-size:18px;'>575.270.9741<br/>toby.boone@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     NM: {
       name: "New Mexico",
-      color: "#7C8C96",
-      hover_color: "#96A3AD",
-      description: "<span style='font-size:30px;'>Toby Boone</span><br/><span style='font-size:18px;'>575.270.9741<br/>toby.boone@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     KS: {
       name: "Kansas",
-      color: "#9A9C84",
-      hover_color: "#B1B497",
-      description: "<span style='font-size:30px;'>Tim Intessimone</span><br/><span style='font-size:18px;'>417.434.6487<br/>tim.intessimone@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     NE: {
       name: "Nebraska",
-      color: "#8B9C7A",
-      hover_color: "#A3B58F",
-      description: "<span style='font-size:30px;'>Matt Woitalewicz</span><br/><span style='font-size:18px;'>308.390.3654<br/>matt.woitalewicz@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     SD: {
       name: "South Dakota",
-      color: "#A8927A",
-      hover_color: "#C0A88F",
-      description: "<span style='font-size:30px;'>TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     ND: {
       name: "North Dakota",
-      color: "#A8927A",
-      hover_color: "#C0A88F",
-      description: "<span style='font-size:30px;'>TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     WY: {
       name: "Wyoming",
-      color: "#4F6D7A",
-      hover_color: "#65889A",
-      description: "<span style='font-size:30px;'>Dan Kwiatkowski</span><br/><span style='font-size:18px;'>410.903.5753<br/>dan.kwiatkowski@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     MT: {
       name: "Montana",
-      color: "#4F6D7A",
-      hover_color: "#65889A",
-      description: "<span style='font-size:30px;'>Dan Kwiatkowski</span><br/><span style='font-size:18px;'>410.903.5753<br/>dan.kwiatkowski@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     CO: {
       name: "Colorado",
-      color: "#A67C52",
-      hover_color: "#C99668",
-      description: "<span style='font-size:30px;'>Brian Kanipe</span><br/><span style='font-size:18px;'>303.257.5542<br/>brian.kanipe@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     UT: {
       name: "Utah",
-      color: "#4F6D7A",
-      hover_color: "#65889A",
-      description: "<span style='font-size:30px;'>Dan Kwiatkowski</span><br/><span style='font-size:18px;'>410.903.5753<br/>dan.kwiatkowski@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     AZ: {
       name: "Arizona",
-      color: "#7A6A5A",
-      hover_color: "#947F69",
-      description: "<span style='font-size:30px;'>Klinton Smuda</span><br/><span style='font-size:18px;'>520.335.4521<br/>klinton.smuda@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     NV: {
       name: "Nevada",
-      description: "<span style='font-size:30px;'>Joel Warman</span><br/><span style='font-size:18px;'>530.363.2624<br/>joel.warman@hennozzles.com</span><br/><br/><span style='font-size:30px;'>Jacob McAfee</span><br/><span style='font-size:18px;'>714.454.2838<br/>jacob.mcafee@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     OR: {
       name: "Oregon",
-      color: "#8D9BA8",
-      hover_color: "#A3B1BD",
-      description: "<span style='font-size:30px;'>David McKenzie</span><br/><span style='font-size:18px;'>541.815.0996<br/>david.mckenzie@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     WA: {
       name: "Washington",
-      color: "#8D9BA8",
-      hover_color: "#A3B1BD",
-      description: "<span style='font-size:30px;'>David McKenzie</span><br/><span style='font-size:18px;'>541.815.0996<br/>david.mckenzie@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     CA: {
       name: "California",
-      description: "<span style='font-size:30px;'>Joel Warman</span><br/><span style='font-size:18px;'>530.363.2624<br/>joel.warman@hennozzles.com</span><br/><br/><span style='font-size:30px;'>Jacob McAfee</span><br/><span style='font-size:18px;'>714.454.2838<br/>jacob.mcafee@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     MI: {
       name: "Michigan",
-      color: "#9C836C",
-      hover_color: "#B79A82",
-      description: "<span style='font-size:30px;'>TBD</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     ID: {
       name: "Idaho",
-      color: "#8D9BA8",
-      hover_color: "#A3B1BD",
-      description: "<span style='font-size:30px;'>David McKenzie</span><br/><span style='font-size:18px;'>541.815.0996<br/>david.mckenzie@hennozzles.com</span>",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
     },
     GU: {
       name: "Guam",
-      hide: "yes",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default",
+      hide: "yes"
     },
     VI: {
       name: "Virgin Islands",
-      hide: "yes",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default",
+      hide: "yes"
     },
     PR: {
       name: "Puerto Rico",
-      hide: "yes",
-      zoomable: "no"
-    },
-    MP: {
-      name: "Northern Mariana Islands",
-      hide: "yes",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default",
+      hide: "yes"
     },
     AS: {
       name: "American Samoa",
-      hide: "yes",
-      zoomable: "no"
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default",
+      hide: "yes"
+    },
+    MP: {
+      name: "Northern Mariana Islands",
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default",
+      hide: "yes"
     }
   },
-  locations: {},
+  locations: {
+    "0": {
+      name: "New York",
+      lat: 40.71,
+      lng: -74,
+      description: "default",
+      color: "default",
+      url: "default",
+      type: "default",
+      size: "default"
+    },
+    "1": {
+      name: "Anchorage",
+      lat: 61.2180556,
+      lng: -149.9002778,
+      color: "default",
+      type: "circle"
+    }
+  },
   labels: {
     NH: {
       parent_id: "NH",
@@ -759,9 +800,5 @@ var simplemaps_usmap_mapdata={
       x: "665",
       y: "580"
     }
-  },
-  legend: {
-    entries: []
-  },
-  regions: {}
+  }
 };
