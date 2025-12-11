@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>USA Map Example</title>
+    <script src="mapdata.js"></script>
+    <script src="usmap.js"></script>
+	  <script>
+  // When the map is ready, hook into state clicks
+  window.addEventListener("load", function () {
+    if (window.simplemaps_usmap && window.simplemaps_usmap.hooks) {
+      window.simplemaps_usmap.hooks.click_state = function (id) {
+        // Send a message to the parent page (Wix) with the state code, like "NC" or "TX"
+        window.parent.postMessage(
+          { type: "henStateClicked", id: id },
+          "*"
+        );
+      };
+    } else {
+      console.log("simplemaps_usmap not found inside iframe.");
+    }
+  });
+</script>
+  </head>
+  <body>
+    <div id="map"></div>
+	</body>
+</html>
+      
+    
+
