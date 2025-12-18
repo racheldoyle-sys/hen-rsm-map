@@ -1,31 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>USA Map Example</title>
-    <script src="mapdata.js"></script>
-    <script src="usmap.js"></script>
-	  <script>
-  // When the map is ready, hook into state clicks
-  window.addEventListener("load", function () {
-    if (window.simplemaps_usmap && window.simplemaps_usmap.hooks) {
-      window.simplemaps_usmap.hooks.click_state = function (id) {
-        // Send a message to the parent page (Wix) with the state code, like "NC" or "TX"
-        window.parent.postMessage(
-          { type: "henStateClicked", id: id },
-          "*"
-        );
-      };
-    } else {
-      console.log("simplemaps_usmap not found inside iframe.");
-    }
-  });
-</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HEN RSM Map</title>
+    <style>
+      html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
+      #map { width: 100%; height: 100vh; }
+    </style>
   </head>
   <body>
     <div id="map"></div>
-	</body>
-</html>
-      
-    
 
+    <!-- Load SimpleMaps from the SAME GitHub folder -->
+    <script src="./usmap.js"></script>
+    <script src="./mapdata.js"></script>
+
+    <script>
+      // Disable zoom at runtime as an extra safeguard
+      try {
+        if (window.simplemaps_usmap_mapdata && simplemaps_usmap_mapdata.main_settings) {
+          simplemaps_usmap_mapdata.main_settings.all_states_zoomable = "no";
+          simplemaps_usmap_mapdata.main_settings.manual_zoom = "no";
+          simplemaps_usmap_mapdata.main_settings.zoom_out_incrementally = "no";
+        }
+        if (window.simplemaps_usmap_mapdata && simplemaps_usmap_mapdata.state_specific) {
+          Object.keys(simplemaps_usmap_mapdata.state_specific).forEach(function(k){
+            simplemaps_usmap_mapdata.state_specific[k].zoomable = "no";
+          });
+        }
+      } catch (e) {}
+
+      function sendStateToParent(id) {
+        try {
+          var st = (window.simplemaps_usmap_mapdata && simplemaps_usmap_mapdata.state_specific)
+            ? (simplemaps_usmap_mapdata.state_specific[id] || {})
+            : {};
+
+          window.parent.postMessage({
+            type: "henStateClicked",
+            id: id,
+            name: st.name || id,
+            color: st.color || "",
+            hover_color: st.hover_color || ""
+          }, "*");
+        } catch (e) {
+          window.parent.postMessage({ type: "henStateClicked", id: id }, "*");
+        }
+      }
+
+      // Attach SimpleMaps click hook
+      if (window.simplemaps_usmap) {
+        window.simplemaps_usmap.hooks = window.simplemaps_usmap.hooks || {};
+        window.simplemaps_usmap.hooks.click_state = function(id) {
+          sendStateToParent(id);
+        };
+      }
+    </script>
+  </body>
+</html>
