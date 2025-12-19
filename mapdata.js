@@ -28,8 +28,8 @@ var simplemaps_usmap_mapdata={
     all_locations_hidden: "no",
     
     //Label defaults
-    label_color: "#d5ddec",
-    label_hover_color: "#d5ddec",
+    label_color: "#ffffff",
+    label_hover_color: "#ffffff",
     label_size: 22,
     label_font: "Arial",
     hide_labels: "no",
@@ -171,8 +171,8 @@ var simplemaps_usmap_mapdata={
     OH: {
       name: "Ohio",
       zoomable: "no",
-      color: "#4F6A63",
-      hover_color: "#68837B"
+      color: "#2E6A5A",
+      hover_color: "#458171"
     },
     IN: {
       name: "Indiana",
