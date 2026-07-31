@@ -13,7 +13,9 @@ var simplemaps_usmap_mapdata={
     border_size: 1.5,
     all_states_inactive: "no",
     all_states_zoomable: "no",
-    location_description: "",
+    
+    //Location defaults
+    location_description: "Location description",
     location_color: "#2041D4",
     location_opacity: 0.8,
     location_hover_opacity: 1,
